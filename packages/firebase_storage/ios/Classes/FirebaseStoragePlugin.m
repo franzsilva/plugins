@@ -76,7 +76,7 @@
   } else {
     result(@"File Succesfully deleted");
   }
-}]
+}];
 }
 
 
