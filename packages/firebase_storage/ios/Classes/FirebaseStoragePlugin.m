@@ -67,6 +67,19 @@
         }];
 }
 
+- (void)delete:(FlutterMethodCall *)call result:(FlutterResult)result {
+  NSString *path = call.arguments[@"path"];
+  FIRStorageReference *fileRef = [[FIRStorage storage].reference child:path];
+  [fileRef deleteWithCompletion:^(NSError *error){
+  if (error != nil) {
+    result(error.flutterError);
+  } else {
+    result(NSString "File Succesfully deleted");
+  }
+}]
+}
+
+
 - (void)getData:(FlutterMethodCall *)call result:(FlutterResult)result {
   NSNumber *maxSize = call.arguments[@"maxSize"];
   NSString *path = call.arguments[@"path"];

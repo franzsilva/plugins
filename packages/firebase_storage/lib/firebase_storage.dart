@@ -47,6 +47,15 @@ class StorageReference {
       },
     );
   }
+  /// Asynchronously delete file on StorageReference
+  Future<String> delete() {
+    return FirebaseStorage._channel.invokeMethod(
+      "StorageReference#delete",
+      <String, dynamic>{
+        'path': _pathComponents.join("/"),
+      },
+    );
+  }
 }
 
 class StorageUploadTask {
