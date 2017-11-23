@@ -44,6 +44,8 @@
     [self putFile:call result:result];
   } else if ([@"StorageReference#getData" isEqualToString:call.method]) {
     [self getData:call result:result];
+  } else if ([@"StorageReference#delete" isEqualToString:call.method]) {
+    [self getData:call result:result];
   } else {
     result(FlutterMethodNotImplemented);
   }
