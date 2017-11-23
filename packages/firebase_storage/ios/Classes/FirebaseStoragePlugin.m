@@ -74,7 +74,7 @@
   if (error != nil) {
     result(error.flutterError);
   } else {
-    result("File Succesfully deleted");
+    result(@"File Succesfully deleted");
   }
 }]
 }
